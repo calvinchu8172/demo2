@@ -40,7 +40,8 @@ end
 def update
 	flash[:notice] = "event was successfully updated"
   if @event.update_attributes(event_params)
-    redirect_to :action => :show, :id => @event
+    # redirect_to :action => :show, :id => @event
+    redirect_to event_url(@event)
   else
     render :action => :edit
   end
@@ -52,7 +53,8 @@ def destroy
   # @event = Event.find(params[:id])
   @event.destroy
 
-  redirect_to :action => :index
+  # redirect_to :action => :index
+  redirect_to events_url
 end
 
 # def create
@@ -67,7 +69,8 @@ def create
 	flash[:notice] = "event was successfully created"
   @event = Event.new(event_params)
   if @event.save
-    redirect_to :action => :index
+    # redirect_to :action => :index
+    redirect_to events_url
   else
     render :action => :new
   end
