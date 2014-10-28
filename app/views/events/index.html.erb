@@ -2,6 +2,12 @@
 
 <%#= paginate @events %>
 
+<%= form_tag search_events_path, :method => :get do %>
+    <%= text_field_tag "keyword" %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+
 <%= debug(@event) %>
 
 <% @events.each do |event| %>

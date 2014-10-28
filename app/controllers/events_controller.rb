@@ -92,6 +92,11 @@ def create
   end
 end
 
+def search
+    @events = Event.where( [ "name like ?", "%#{params[:keyword]}%" ]).page(params[:page]).per(5)
+    render :action => :index
+end
+
 private
 
 def set_event

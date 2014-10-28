@@ -2,8 +2,9 @@
 <%= simple_format(@event.description) %>
 
 <p>
-	<%= @event.groups.map{ |x| x.name }.join(", ")
-
+	<% @event.groups.each do |g| %>
+		<%= g.name %>
+	<% end %>
 </p>
 
 <p>Category: <%= @event.category.try :name %><p>

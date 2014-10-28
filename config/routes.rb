@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   resources :events do  #RESTFUL version
      resources :attendees, :controller => 'event_attendees'
+     collection do
+        get :search
+     end  
+
   end
 
 
