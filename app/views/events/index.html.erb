@@ -7,8 +7,13 @@
 	<%= submit_tag "Search" %>
 <% end %>
 
+ <%= link_to 'Sort by Name', events_path( :order => "name") %>
+ <%= link_to 'Sort by Default', events_path %>
+
 
 <%= debug(@event) %>
+
+
 
 <% @events.each do |event| %>
   <li>
@@ -25,6 +30,8 @@
     <%= link_to " (JSON)", event_path(event, :format => :json) %>
     <%= link_to 'edit', edit_event_path(event) %>
     <%= button_to 'delete', event_path(event), :method => :delete %>
+
+   
 
     <%= link_to 'Dashboard', dashboard_event_path(event) %>
   </li>

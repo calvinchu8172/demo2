@@ -101,6 +101,11 @@ def dashboard
     @event = Event.find(params[:id])
 end
 
+def index
+  sort_by = (params[:order] == 'name') ? 'name' : 'created_at'
+  @events = Event.order(sort_by).page(params[:page]).per(5)
+end
+
 private
 
 def set_event

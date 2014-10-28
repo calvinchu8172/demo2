@@ -5424,3 +5424,242 @@ Processing by EventsController#dashboard as HTML
   [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
   Rendered events/dashboard.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/7.xml" for 127.0.0.1 at 2014-10-28 13:49:44 +0800
+Processing by EventsController#show as XML
+  Parameters: {"id"=>"7"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered events/show.xml.builder (90.7ms)
+Completed 200 OK in 99ms (Views: 96.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/7.json" for 127.0.0.1 at 2014-10-28 13:49:47 +0800
+Processing by EventsController#show as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", "7"]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/7.xml" for 127.0.0.1 at 2014-10-28 13:49:49 +0800
+Processing by EventsController#show as XML
+  Parameters: {"id"=>"7"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered events/show.xml.builder (0.4ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-28 13:53:19 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"   ORDER BY created_at[0m
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `paginate' for #<Event::ActiveRecord_Relation:0x007fba0554c740>):
+  app/controllers/events_controller.rb:106:in `index'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.8ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 87ms (Views: 77.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 13:54:45 +0800
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:54:52 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:54:53 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:54:54 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:54:56 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 71ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:54:57 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 73ms (Views: 71.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 13:55:22 +0800
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:55:24 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:55:25 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 77ms (Views: 75.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:55:26 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 73ms (Views: 71.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:55:27 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 87ms (Views: 85.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:55:52 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 73ms (Views: 71.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 13:55:53 +0800
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:55:54 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:55:54 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:55:55 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:55:56 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 13:55:57 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 72ms (Views: 69.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 13:55:57 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 76ms (Views: 73.8ms | ActiveRecord: 0.5ms)
