@@ -4388,3 +4388,158 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 11:03:0
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 11:03:05 +0800
+
+
+Started GET "/events/10" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT  "categories".* FROM "categories"  WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 76ms (Views: 58.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 11:11:47 +0800
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 11:11:53 +0800
+Processing by EventsController#index as HTML
+event: nil
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2014-10-28 11:12:01 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 52ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/6/edit" for 127.0.0.1 at 2014-10-28 11:12:04 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36m (0.3ms)[0m  [1mSELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 6]]
+  Rendered events/_form.html.erb (134.6ms)
+  Rendered events/edit.html.erb within layouts/application (138.0ms)
+Completed 200 OK in 215ms (Views: 211.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2014-10-28 11:12:14 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered events/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 55.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/6/edit" for 127.0.0.1 at 2014-10-28 11:12:26 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36m (0.2ms)[0m  [1mSELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 6]]
+  Rendered events/_form.html.erb (4.8ms)
+  Rendered events/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 75ms (Views: 72.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2014-10-28 11:12:58 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/6/edit" for 127.0.0.1 at 2014-10-28 11:13:02 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36m (0.1ms)[0m  [1mSELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 6]]
+  Rendered events/_form.html.erb (5.6ms)
+  Rendered events/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 68ms (Views: 65.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/6/edit" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36m (0.1ms)[0m  [1mSELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 6]]
+  Rendered events/_form.html.erb (4.9ms)
+  Rendered events/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 63ms (Views: 60.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 11:16:38 +0800
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 11:18:17 +0800
+Processing by EventsController#index as HTML
+event: nil
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/7/edit" for 127.0.0.1 at 2014-10-28 11:18:18 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35m (0.1ms)[0m  SELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?  [["event_id", 7]]
+  Rendered events/_form.html.erb (5.6ms)
+  Rendered events/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 62ms (Views: 58.9ms | ActiveRecord: 0.8ms)

@@ -1,6 +1,11 @@
 <%= @event.name %>
 <%= simple_format(@event.description) %>
 
+<p>
+	<%= @event.groups.map{ |x| x.name }.join(", ")
+
+</p>
+
 <p>Category: <%= @event.category.try :name %><p>
 
 <p><%= link_to 'Back to index', events_path %></p>
