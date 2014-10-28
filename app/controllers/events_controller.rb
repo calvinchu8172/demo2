@@ -97,6 +97,10 @@ def search
     render :action => :index
 end
 
+def dashboard
+    @event = Event.find(params[:id])
+end
+
 private
 
 def set_event
