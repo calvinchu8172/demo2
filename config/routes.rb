@@ -1,16 +1,23 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :events do  #RESTFUL version
-     resources :attendees, :controller => 'event_attendees'
+    resources :attendees, :controller => 'event_attendees'
 
 
-     collection do
-        get :search
-     end  
+    collection do
+      get :search
+    end  
 
-     member do
-        get :dashboard
+    member do
+      get :dashboard
     end
+
+    namespace :admin do
+      resources :events
+    end
+
+  root :to => "events#index"
 
   end
 

@@ -5663,3 +5663,2313 @@ Processing by EventsController#index as HTML
   [1m[36mEvent Load (0.5ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
   Rendered events/index.html.erb within layouts/application (13.7ms)
 Completed 200 OK in 76ms (Views: 73.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 14:15:17 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 736ms (Views: 726.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:15:17 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:18 +0800
+
+
+Started GET "/events/10/dashboard" for 127.0.0.1 at 2014-10-28 14:15:24 +0800
+Processing by EventsController#dashboard as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered events/dashboard.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 78ms (Views: 75.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 14:15:30 +0800
+
+
+Started GET "/events.atom" for 127.0.0.1 at 2014-10-28 14:16:47 +0800
+Processing by EventsController#index as ATOM
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.atom.builder (8.6ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-28 14:17:20 +0800
+Processing by EventsController#new as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered events/_form.html.erb (33.8ms)
+  Rendered events/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 104ms (Views: 101.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 14:19:13 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (38.4ms)
+Completed 500 Internal Server Error in 43ms
+
+ActionView::Template::Error (undefined local variable or method `admin_events_path' for #<#<Class:0x007fba05952498>:0x007fba050f1e48>):
+    40: 
+    41: <%= link_to 'new event', new_event_path %>
+    42: <%= link_to "Atom feed", events_path(:format => :atom) %>
+    43: <%= link_to 'Admin', admin_events_path %>
+  app/views/events/index.html.erb:43:in `_app_views_events_index_html_erb___837607009373687527_70218462757740'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 14:22:12 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (37.3ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x007fba05952498>:0x007fba01d00350>):
+    40: 
+    41: <%= link_to 'new event', new_event_path %>
+    42: <%= link_to "Atom feed", events_path(:format => :atom) %>
+    43: <%= link_to 'Admin', admin_event_path(event) %>
+  app/views/events/index.html.erb:43:in `_app_views_events_index_html_erb___837607009373687527_70218435513240'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.4ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 14:22:27 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 14:22:28 +0800
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 14:22:41 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 44ms
+
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x007fba05952498>:0x007fba0579e250>):
+    40: 
+    41: <%= link_to 'new event', new_event_path %>
+    42: <%= link_to "Atom feed", events_path(:format => :atom) %>
+    43: <%= link_to 'Admin', admin_event_path(event) %>
+  app/views/events/index.html.erb:43:in `_app_views_events_index_html_erb___837607009373687527_70218466255780'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 14:22:54 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (35.5ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x007fba05952498>:0x007fba05dec080>):
+    40: 
+    41: <%= link_to 'new event', new_event_path %>
+    42: <%= link_to "Atom feed", events_path(:format => :atom) %>
+    43: <%= link_to 'admin', admin_event_path(event) %>
+  app/views/events/index.html.erb:43:in `_app_views_events_index_html_erb___837607009373687527_70218469553660'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 14:23:20 +0800
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 16:12:07 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+Completed 500 Internal Server Error in 5ms
+
+ArgumentError (Unknown key: :order. Valid keys are: :class_name, :class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table):
+  app/models/event.rb:7:in `<class:Event>'
+  app/models/event.rb:1:in `<top (required)>'
+  app/controllers/events_controller.rb:106:in `index'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.6ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 16:13:28 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+Completed 500 Internal Server Error in 4ms
+
+ArgumentError (The :dependent option must be one of [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception], but is :destory):
+  app/models/event.rb:7:in `<class:Event>'
+  app/models/event.rb:1:in `<top (required)>'
+  app/controllers/events_controller.rb:106:in `index'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.3ms)
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 16:14:13 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 92ms (Views: 82.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:14:14 +0800
+
+
+Started GET "/events?order=name" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"order"=>"name"}
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY name LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 97ms (Views: 87.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:15:33 +0800
+
+
+Started GET "/events/6" for 127.0.0.1 at 2014-10-28 16:15:34 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 86ms (Views: 82.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/6/edit" for 127.0.0.1 at 2014-10-28 16:15:37 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35m (0.2ms)[0m  SELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?  [["event_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 6]]
+  Rendered events/_form.html.erb (14.6ms)
+  Rendered events/edit.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 88ms (Views: 84.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/6.xml" for 127.0.0.1 at 2014-10-28 16:15:41 +0800
+Processing by EventsController#show as XML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered events/show.xml.builder (0.3ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/9" for 127.0.0.1 at 2014-10-28 16:15:47 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?  [["event_id", 9]]
+  Rendered events/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/9" for 127.0.0.1 at 2014-10-28 16:15:52 +0800
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", "9"]]
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 9]]
+  Rendered events/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 74ms (Views: 70.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:15:54 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/events/10" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tALtLFI9O/39ZO/k9+uep++TT2IlV1Nvt6SAyiXME0Q=", "id"=>"10"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 10]]
+  [1m[35m (38.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/events
+Completed 302 Found in 48ms (ActiveRecord: 39.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 95ms (Views: 93.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:15:59 +0800
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:14 +0800
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-28 16:17:20 +0800
+Processing by EventsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+  Rendered events/_form.html.erb (4.5ms)
+  Rendered events/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 74ms (Views: 72.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tALtLFI9O/39ZO/k9+uep++TT2IlV1Nvt6SAyiXME0Q=", "event"=>{"category_id"=>"1", "group_ids"=>["1", ""], "name"=>"Calvin", "description"=>"Calvin"}, "commit"=>"Create"}
+  [1m[36mGroup Load (0.5ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("category_id", "created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["category_id", 1], ["created_at", "2014-10-28 08:17:34.718362"], ["description", "Calvin"], ["name", "Calvin"], ["updated_at", "2014-10-28 08:17:34.718362"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "event_groupships" ("created_at", "event_id", "group_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-28 08:17:34.720769"], ["event_id", 14], ["group_id", 1], ["updated_at", "2014-10-28 08:17:34.720769"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 29ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 79ms (Views: 76.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:34 +0800
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-28 16:17:41 +0800
+Processing by EventsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  Rendered events/_form.html.erb (4.6ms)
+  Rendered events/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tALtLFI9O/39ZO/k9+uep++TT2IlV1Nvt6SAyiXME0Q=", "event"=>{"category_id"=>"1", "group_ids"=>[""], "name"=>"ddddd", "description"=>"aasss"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("category_id", "created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-10-28 08:17:46.819832"], ["description", "aasss"], ["name", "ddddd"], ["updated_at", "2014-10-28 08:17:46.819832"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 12ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 75ms (Views: 73.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:46 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:17:47 +0800
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+Processing by EventsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 96ms (Views: 94.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:18:05 +0800
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2014-10-28 16:18:07 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 5
+  Rendered events/index.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 155ms (Views: 152.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:18:11 +0800
+Processing by EventsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 81ms (Views: 79.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2014-10-28 16:18:14 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 5
+  Rendered events/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 83ms (Views: 81.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 5
+  Rendered events/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:14 +0800
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 5
+  Rendered events/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 86ms (Views: 84.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:19:16 +0800
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-28 16:20:26 +0800
+Processing by EventsController#new as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  Rendered events/_form.html.erb (5.6ms)
+  Rendered events/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tALtLFI9O/39ZO/k9+uep++TT2IlV1Nvt6SAyiXME0Q=", "event"=>{"category_id"=>"1", "group_ids"=>[""], "name"=>"fffdfdfd", "description"=>"ssdsdsds"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("category_id", "created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["category_id", 1], ["created_at", "2014-10-28 08:20:37.543373"], ["description", "ssdsdsds"], ["name", "fffdfdfd"], ["updated_at", "2014-10-28 08:20:37.543373"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 12ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+Processing by EventsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 84ms (Views: 82.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 16:20:37 +0800
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2014-10-28 16:20:40 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 5[0m
+  Rendered events/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 87ms (Views: 84.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 16:20:44 +0800
+Processing by EventsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 84ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/6/edit" for 127.0.0.1 at 2014-10-28 16:20:50 +0800
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36m (0.2ms)[0m  [1mSELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "groups".id FROM "groups" INNER JOIN "event_groupships" ON "groups"."id" = "event_groupships"."group_id" WHERE "event_groupships"."event_id" = ?  [["event_id", 6]]
+  Rendered events/_form.html.erb (8.3ms)
+  Rendered events/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 80ms (Views: 76.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events.atom" for 127.0.0.1 at 2014-10-28 16:20:55 +0800
+Processing by EventsController#index as ATOM
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.atom.builder (8.4ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-28 16:20:58 +0800
+Processing by EventsController#new as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered events/_form.html.erb (4.5ms)
+  Rendered events/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 74ms (Views: 72.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-28 17:38:26 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (1.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2014-10-28 17:38:31 +0800
+
+ActionController::RoutingError (No route matches [GET] "/books"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (40.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+Processing by EventsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 101ms (Views: 89.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-28 17:38:43 +0800
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-28 17:46:35 +0800
+Processing by EventsController#new as HTML
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered events/_form.html.erb (26.5ms)
+  Rendered events/new.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 96ms (Views: 93.4ms | ActiveRecord: 1.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20141029015014)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141029015014"]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 09:54:40 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.8ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.1ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (90.1ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 09:54:49 +0800
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.6ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.5ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 09:54:56 +0800
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.3ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 09:55:06 +0800
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.3ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (55.7ms)
+
+
+Started GET "/demo2" for 127.0.0.1 at 2014-10-29 09:55:11 +0800
+
+ActionController::RoutingError (No route matches [GET] "/demo2"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.6ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.8ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 09:55:26 +0800
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.8ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (55.7ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 09:56:20 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.9ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.9ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.3ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 09:57:20 +0800
+
+ActionController::RoutingError (uninitialized constant WelcomeController):
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.6) lib/active_support/inflector/methods.rb:236:in `constantize'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/calvinchu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (61.7ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+Processing by EventsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (101.6ms)
+Completed 200 OK in 362ms (Views: 311.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 09:58:44 +0800
+
+
+Started GET "/events?page=2" for 127.0.0.1 at 2014-10-29 09:59:01 +0800
+Processing by EventsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 5[0m
+  Rendered events/index.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 102ms (Views: 100.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 09:59:04 +0800
+Processing by EventsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 81ms (Views: 78.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 10ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (83.9ms)
+Completed 200 OK in 160ms (Views: 145.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:00:58 +0800
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-10-29 10:01:12 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-29 10:01:26 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tALtLFI9O/39ZO/k9+uep++TT2IlV1Nvt6SAyiXME0Q=", "user"=>{"email"=>"calvinchu8172@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'calvinchu8172@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-29 02:01:27.044987"], ["email", "calvinchu8172@gmail.com"], ["encrypted_password", "$2a$10$/PLeFkPY6HrMVYgVH8tuv.AeNH3bHaxX2/9aiXo1m2hMFUq0jULku"], ["updated_at", "2014-10-29 02:01:27.044987"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-29 02:01:27.053360"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-29 02:01:27.053360"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-29 02:01:27.054873"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/events
+Completed 302 Found in 162ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 102ms (Views: 85.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:27 +0800
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2014-10-29 10:01:33 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tALtLFI9O/39ZO/k9+uep++TT2IlV1Nvt6SAyiXME0Q="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-29 10:01:33 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-29 10:01:38 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+Processing by EventsController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 149ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:43 +0800
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vefEbnFoGOjllipj3cRr7WHic1XYTHY8UazVMAKG6H0=", "user"=>{"email"=>"calvinchu8172@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'calvinchu8172@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["remember_created_at", "2014-10-29 02:01:54.772888"], ["updated_at", "2014-10-29 02:01:54.773425"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-29 02:01:54.787834"], ["sign_in_count", 2], ["updated_at", "2014-10-29 02:01:54.788681"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 130ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0
+  Rendered events/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 93ms (Views: 89.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:01:54 +0800
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20141023100245)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "is_public" boolean, "capacity" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023100245"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+Migrating to AddStatusToEvents (20141023100524)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "events" ADD "status" varchar(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141023100524"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to CreateLocations (20141027022311)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "event_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027022311"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Migrating to CreateAttendees (20141027023514)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "attendees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "event_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027023514"]]
+  [1m[35m (4.1ms)[0m  commit transaction
+Migrating to CreateGroups (20141027025418)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027025418"]]
+  [1m[35m (3.9ms)[0m  commit transaction
+Migrating to CreateEventGroupships (20141027025429)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "event_groupships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "group_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027025429"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Migrating to CreateCategories (20141027030904)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "position" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "events" ADD "category_id" integer[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_events_on_category_id" ON "events" ("category_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141027030904"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20141029015014)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141029015014"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdTo (20141029022038)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141029022038"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_category_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 8ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 84ms (Views: 72.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:22:24 +0800
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 73ms (Views: 61.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:25:58 +0800
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6mw0wELGirjIAqtD16JSGaadhPe39kRQ/X/7upZFQ0=", "user"=>{"email"=>"calvinchu8172@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'calvinchu8172@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6mw0wELGirjIAqtD16JSGaadhPe39kRQ/X/7upZFQ0=", "user"=>{"email"=>"calvinchu8172@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 159ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:02 +0800
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:24 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-29 10:26:43 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6mw0wELGirjIAqtD16JSGaadhPe39kRQ/X/7upZFQ0=", "user"=>{"email"=>"calvinchu8172@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'calvinchu8172@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 180ms (Views: 71.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:26:44 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-10-29 10:26:56 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6mw0wELGirjIAqtD16JSGaadhPe39kRQ/X/7upZFQ0=", "user"=>{"email"=>"calvinchu8172@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'calvinchu8172@gmail.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-29 02:26:56.792342"], ["email", "calvinchu8172@gmail.com"], ["encrypted_password", "$2a$10$ct1l6no4CfrZ5P89skO28O94/kzvu/uUMV9ZGf3kyXfHvOfr4e1Dm"], ["updated_at", "2014-10-29 02:26:56.792342"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-29 02:26:56.797747"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-29 02:26:56.797747"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-29 02:26:56.798449"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/events
+Completed 302 Found in 118ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:26:56 +0800
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?  [[nil, 1]]
+SQLite3::SQLException: no such column: events.user_id: SELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?
+  Rendered events/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: events.user_id: SELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?):
+    1: 
+    2: 
+    3: <%= paginate @events %>
+    4: 
+    5: <%= form_tag search_events_path, :method => :get do %>
+    6: 	<%= text_field_tag "keyword" %>
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__332891759343291518_70274690047920'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "events"
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"   ORDER BY created_at LIMIT 5 OFFSET 0[0m
+  Rendered events/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 101ms (Views: 73.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:27:33 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:27:34 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:27:34 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:27:34 +0800
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:28:24 +0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?[0m  [[nil, 1]]
+SQLite3::SQLException: no such column: events.user_id: SELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?
+  Rendered events/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: events.user_id: SELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?):
+    1: 
+    2: 
+    3: <%= paginate @events %>
+    4: 
+    5: <%= form_tag search_events_path, :method => :get do %>
+    6: 	<%= text_field_tag "keyword" %>
+  app/views/events/index.html.erb:3:in `_app_views_events_index_html_erb__332891759343291518_70274690047920'
+
+
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/calvinchu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddUserIdTo (20141029022038)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141029022038'
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdTo (20141029022038)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "events" ADD "user_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141029022038"]]
+  [1m[36m (45.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_category_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:29:24 +0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?  [["user_id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."user_id" = ?  ORDER BY created_at LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 127ms (Views: 81.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:25 +0800
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."user_id" = ?  ORDER BY created_at LIMIT 5 OFFSET 0  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 78ms (Views: 74.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:27 +0800
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered events/_form.html.erb (35.8ms)
+  Rendered events/new.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 133ms (Views: 130.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:31 +0800
+
+
+Started POST "/events" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f6mw0wELGirjIAqtD16JSGaadhPe39kRQ/X/7upZFQ0=", "event"=>{"group_ids"=>[""], "name"=>"weqw", "description"=>"eqwe"}, "commit"=>"Create"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "events" ("created_at", "description", "name", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-29 02:29:35.665074"], ["description", "eqwe"], ["name", "weqw"], ["updated_at", "2014-10-29 02:29:35.665074"], ["user_id", 1]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 52ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events"  WHERE "events"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."user_id" = ?  ORDER BY created_at LIMIT 5 OFFSET 0  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 86ms (Views: 82.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/admin/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800
+
+
+Started GET "/assets/admin/events.css?body=1" for 127.0.0.1 at 2014-10-29 10:29:35 +0800

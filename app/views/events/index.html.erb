@@ -1,26 +1,27 @@
 
 
-<%#= paginate @events %>
+<%= paginate @events %>
 
 <%= form_tag search_events_path, :method => :get do %>
-    <%= text_field_tag "keyword" %>
+	<%= text_field_tag "keyword" %>
 	<%= submit_tag "Search" %>
-<% end %>
 
- <%= link_to 'Sort by Name', events_path( :order => "name") %>
- <%= link_to 'Sort by Default', events_path %>
+	<% end %>
+
+<%= link_to 'Sort by Name', events_path( :order => "name") %>
+<%= link_to 'Sort by Default', events_path %>
 
 
-<%= debug(@event) %>
+<%#= debug(@event) %>
 
 
 
 <% @events.each do |event| %>
   <li>
-     <%= event.name %>
-  <%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
-  <%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
-  <%= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
+     <%#= event.name %>
+  <%#= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
+  <%#= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
+  <%#= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
 
 
 
@@ -40,3 +41,4 @@
 
 <%= link_to 'new event', new_event_path %>
 <%= link_to "Atom feed", events_path(:format => :atom) %>
+<%#= link_to 'admin', admin_event_path(event) %>
