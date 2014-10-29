@@ -6,7 +6,8 @@ before_action :authenticate_user!
 
 
 def index
-  @events = Event.page(params[:page]).per(5)
+  sort_by = (params[:order] == 'name') ? 'name' : 'created_at'
+  @events = current_user.events.order(sort_by).page(params[:page]).per(5)
 
   Rails.logger.debug("event: #{@event.inspect}") #check events
 
@@ -78,11 +79,6 @@ end
 
 def dashboard
     @event = Event.find(params[:id])
-end
-
-def index
-  sort_by = (params[:order] == 'name') ? 'name' : 'created_at'
-  @events = current_user.events.order(sort_by).page(params[:page]).per(5)
 end
 
 private
