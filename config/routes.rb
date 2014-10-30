@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get "welcome/say_hello" => "welcome#say"
+  get "welcome" => "welcome#index"
+
+   
+
   devise_for :users
   resources :events do  #RESTFUL version
     resources :attendees, :controller => 'event_attendees'
@@ -16,11 +21,10 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :events
     end
-
-  root :to => "events#index"
-
   end
 
+
+  root :to => "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

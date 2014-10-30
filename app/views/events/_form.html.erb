@@ -1,14 +1,18 @@
 
-<%= f.collection_select(:category_id, Category.all, :id, :name) %>
+<!-- <table width="300" border="1"> -->
+<tr>
+<td><%= f.collection_select(:category_id, Category.all, :id, :name) %>
+</td>
+<td><%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %>
+</td>
 
-<%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %>
-
-
-<%= f.label :name, "Name" %>
+<td><%= f.label :name, "Name" %>
 <%= f.text_field :name %>
+</td>
 
-<%= f.label :description, "Description" %>
+<td><%= f.label :description, "Description" %>
 <%= f.text_area :description %>
+</td>
 
 <% if @event.errors.any? %>
       <ul>
@@ -17,3 +21,5 @@
       <% end %>
       </ul>
 <% end %>
+</tr>
+<!-- </table> -->

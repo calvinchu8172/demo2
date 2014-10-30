@@ -9,6 +9,8 @@ def index
   sort_by = (params[:order] == 'name') ? 'name' : 'created_at'
   @events = current_user.events.order(sort_by).page(params[:page]).per(5)
 
+  @event = Event.new
+
   Rails.logger.debug("event: #{@event.inspect}") #check events
 
   respond_to do |format|
@@ -19,9 +21,9 @@ def index
   end
 end
 
-def new
-	@event = Event.new
-end
+#def new
+#	@event = Event.new
+#end
 
 def show
 @event = Event.find(params[:id])
@@ -56,7 +58,6 @@ def destroy
 end
 
 def create
-
   
 	flash[:notice] = "event was successfully created"
   @event = Event.new(event_params)
